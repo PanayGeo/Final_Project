@@ -1,3 +1,18 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import time, random
 desire = True
 while desire == True:
@@ -36,8 +51,11 @@ while desire == True:
     for item in choice_list:
         print(item.title())
         time.sleep(1)
-    print(user_draw)  
+    time.sleep(1)
+    print(user_draw)
+    time.sleep(1)
     print(cpu_draw)
+    time.sleep(1)
     if cpu_value>user_value:
         print('You Lost D:')
     elif user_value>cpu_value:
@@ -50,8 +68,9 @@ while desire == True:
     wish=input('Would you like to play again? (y)es/(n)o\n')
     if 'y' in wish.lower():
         pass
+        print('\n')
     elif 'n' in wish.lower():
         break
     else:
-        print('*knocks you out*')
+        print('*knocks you out*\n')
         pass        
