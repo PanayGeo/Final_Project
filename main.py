@@ -38,7 +38,7 @@ while desire == True:
             cpu_choice = random.choice(choice_list)
             
             #do you even need to play?          answer: no
-            #cast
+            #casting
             if int(user_choice)>0:
                 user_choice=random.choice(choice_list)
 
@@ -46,7 +46,7 @@ while desire == True:
             cpu_draw = f'Computer cast {cpu_choice}'
             cpu_value = choice_list.index(cpu_choice)+1
                 
-            #ifelse 's to interpret user response
+            #ifelifelse's to interpret user response
             #Method .lower just to account for odd spelling and capitalization but still be able to move forward if the input
             #is still right to a value that could be expected by the program
             if 'rock' in user_choice.lower():
