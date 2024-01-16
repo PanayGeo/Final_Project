@@ -30,22 +30,16 @@ while desire == True:
     while True:
         #tryexcept
         try:
-            user_choice=input('Choose either {Rock}, {Paper}, {Scissors} or type in a number for a random choice\n')
+            user_choice=input('Choose either {Rock}, {Paper}, {Scissors} or type f for a random choice\n')
             print('\n')
-
             choice_list = ['rock','paper','scissors']
             #Library random used for computer choice
             cpu_choice = random.choice(choice_list)
-            
-            #do you even need to play?          answer: no
-            #casting
-            if int(user_choice)>0:
-                user_choice=random.choice(choice_list)
 
             user_draw = f'You cast {user_choice}'
             cpu_draw = f'Computer cast {cpu_choice}'
             cpu_value = choice_list.index(cpu_choice)+1
-                
+
             #ifelifelse's to interpret user response
             #Method .lower just to account for odd spelling and capitalization but still be able to move forward if the input
             #is still right to a value that could be expected by the program
@@ -56,23 +50,109 @@ while desire == True:
                 user_value = 2
                 break
             elif 'scissors' in user_choice.lower():
-                user_value = 3   
+                user_value = 3
                 break
             elif ':3' in user_choice:
                 print('Meow')
                 for i in range(20):
                     print("/` - T -ス")
                     time.sleep(1.3)
+            #do you even need to play?          answer: no
+            elif 'f' in user_choice.lower():
+                user_choice=random.choice(choice_list)
+            elif 'trivia' in user_choice:
+                print('Welcome to easter egg trivia!!!!')
+                time.sleep(1)
+                print('🎉🎉🎉')
+                time.sleep(1)
+                print('You shouldn\'t be here')
+                time.sleep(1)
+                print("BUT SINCE YOU ARE LET'S PLAY SOME TRIVIA")
+                score=0
+                time.sleep(2)
+                #Casting
+                q1=int(input('What is Mr. Toaha\'s first name?(Lore Accurate)\n(1.Zaccariah\n(2.Simon\n(3.Mister\n(4.Blank (No name)\n'))
+                if q1 == 4:
+                    print('YOU ARE CORRECT')
+                    score+=1
+                elif q1 == 3:
+                    print('I\'ll accept it')
+                    score+=1
+                else:
+                    print('WRONG!!!')
+                time.sleep(1)
+                print('Next question')
+                time.sleep(1)
+                q2=int(input('Are Simon and Mr. Toaha the same person?\n(1.Yes\n(2.No\n(3.Maybe\n'))
+                if q2 == 2:
+                    print('YOU ARE CORRECT')
+                    score+=1
+                elif q2 == 3:
+                    print('shhhhhh')
+                    score+=1
+                else:
+                    print('WRONG!!!')
+                time.sleep(1)
+                print('Next question')
+                time.sleep(2)
+                q3=int(input('What is an acceptable score in the eyes of Mr. Toaha? \n(Please enter a numeric value):'))
+                if q3 > 100:
+                    print('YOU ARE CORRECT')
+                    score+=1
+                elif q3 == 100:
+                    print('it\'s')
+                    time.sleep(1)
+                    print('acceptable')
+                    score+=1
+                else:
+                    print('That is borderline failing')
+                time.sleep(1)
+                print('Next question')
+                time.sleep(2)
+                q4=int(input("Which Toaha Brother was locked away FOR LIFE?\n(1.          Toaha\n(2.Simon Toaha\n(3.Sir Toaha\n(4.Señor Toaha\n"))
+                if q4 == 3:
+                    print('YOU ARE CORRECT')
+                    score+=1
+                else:
+                    print('WRONG!!!')
+                time.sleep(1)
+                print('Next question')
+                time.sleep(1)
+                while True:
+                    q5=input('I\'m out of questions\n(1.Great thinking stoobid\n(2.fun while it lasted :D\n(3.@#$! *@#\n(4.Fire in the hole\n')
+                    if q5 == '1':
+                        print('Well you don\'t have to be so rude about it D:<')
+                        time.sleep(1)
+                        print('Good day SIR!')
+                        break
+                    elif q5 == '2':
+                        print('it was')
+                        time.sleep(1)
+                        print('okie bye ヾ(≧▽≦*)o')
+                        break
+                    elif q5 == '3':
+                        print('Well alright then')
+                        time.sleep(1)
+                        print('quite immature of you')
+                        break
+                    elif q5 == '4':
+                        print('Fire in the hole 🙂')
+                        break
+                    else:
+                        time.sleep(2)
+                        print('Well don\'t just stand there')
+                        time.sleep(2)
+                        print('\n\n\n\n\n\n\n\n')
             else:
                 raise ValueError
         except ValueError:
-            print('that is not a valid input') 
+            print('that is not a valid input')
 
     #for loop for the iconic shouting of rock paper scissors
     for item in choice_list:
         print(item.title())
         time.sleep(1)
-        
+
     print('\n')
     time.sleep(1)
     print(user_draw.title())
@@ -83,18 +163,18 @@ while desire == True:
     if user_value==cpu_value:
         print('Tie Game')
 
-    #rock scissors cases 
+    #rock scissors cases
     elif cpu_value>user_value or user_value>cpu_value:
         if cpu_value == 3 and user_value == 1:
             print('You WIN!!!')
         elif user_value == 3 and cpu_value == 1:
             print('You Lost D:')
-    #scissors beats paper, paper beats rock        
+    #scissors beats paper, paper beats rock
         elif cpu_value>user_value:
             print('You Lost D:')
         elif user_value>cpu_value:
             print('You WIN!!!')
-        else: 
+        else:
             print('If the code broke I\'m not even suprised\n I have no idea what\'s going on anymore')
 
 
