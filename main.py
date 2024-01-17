@@ -60,6 +60,7 @@ while desire == True:
             #do you even need to play?          answer: no
             elif 'f' in user_choice.lower():
                 user_choice=random.choice(choice_list)
+                break
             elif 'trivia' in user_choice:
                 print('Welcome to easter egg trivia!!!!')
                 time.sleep(1)
@@ -190,7 +191,7 @@ while desire == True:
         time.sleep(4)
         print('I am genuinely sad that I won\'t have your class or you as a teacher next term')
         time.sleep(4)
-        print('I know the other students in pd. 5 give you shirt for being a little kooky but that\'s why I liked your class')
+        print('I know the other students in pd. 5 give you crepe for being a little kooky but that\'s why I liked your class')
         time.sleep(6)
         print('Although I did go in there knowing most stuff I still enjoyed the ways that you taught \nand that you weren\'t afraid to joke around with your students every once in a while')
         time.sleep(8)
