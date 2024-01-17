@@ -36,10 +36,6 @@ while desire == True:
             #Library random used for computer choice
             cpu_choice = random.choice(choice_list)
 
-            user_draw = f'You cast {user_choice}'
-            cpu_draw = f'Computer cast {cpu_choice}'
-            cpu_value = choice_list.index(cpu_choice)+1
-
             #ifelifelse's to interpret user response
             #Method .lower just to account for odd spelling and capitalization but still be able to move forward if the input
             #is still right to a value that could be expected by the program
@@ -59,7 +55,7 @@ while desire == True:
                     time.sleep(1.3)
             #do you even need to play?          answer: no
             elif 'f' in user_choice.lower():
-                user_choice=random.choice(choice_list)
+                random_user_choice = random.choice(choice_list)
                 break
             elif 'trivia' in user_choice:
                 print('Welcome to easter egg trivia!!!!')
@@ -148,6 +144,16 @@ while desire == True:
                 raise ValueError
         except ValueError:
             print('that is not a valid input')
+    
+    #Required logic for user random
+    if user_choice == 'f':
+        user_choice = random_user_choice
+        user_value = choice_list.index(cpu_choice)+1
+    
+    user_draw = f'You cast {user_choice}'
+    cpu_draw = f'Computer cast {cpu_choice}'
+    cpu_value = choice_list.index(cpu_choice)+1
+    
 
     #for loop for the iconic shouting of rock paper scissors
     for item in choice_list:
